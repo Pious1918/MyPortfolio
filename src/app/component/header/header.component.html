@@ -1,16 +1,16 @@
 <header class="w-full flex justify-center p-4 bg-ivory">
-    <nav class="bg-white/90 backdrop-blur-sm shadow-lg rounded-full px-6 py-3">
-      <ul class="flex space-x-8">
-        <li *ngFor="let item of navigationItems">
-          <a 
-            [routerLink]="item.route"
-            routerLinkActive="text-blue-600 bg-blue-50"
-            [routerLinkActiveOptions]="{ exact: item.route === '/' }"
-            class="px-4 py-2 text-gray-600 rounded-full transition-all duration-300 font-light hover:bg-gray-50"
-          >
-            {{ item.label }}
-          </a>
-        </li>
-      </ul>
-    </nav>
-  </header>
+  <nav class="bg-white/90 backdrop-blur-sm shadow-lg rounded-full px-6 py-3">
+    <ul class="flex space-x-4 sm:space-x-8">
+      <li *ngFor="let item of navigationItems">
+        <a 
+          [routerLink]="item.route"
+          routerLinkActive="text-blue-600 bg-blue-50"
+          [routerLinkActiveOptions]="{ exact: item.route === '/' }"
+          class="px-4 py-2 text-gray-600 rounded-full transition-all duration-300 font-light hover:bg-gray-50"
+        >
+          {{ item.label }}
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>

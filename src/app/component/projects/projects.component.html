@@ -34,22 +34,21 @@
 
 <!-- Modal HTML -->
 <div *ngIf="selectedProject" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-  <div class="bg-white w-full max-w-lg p-6 rounded-lg shadow-lg relative">
+  <div 
+    class="bg-white w-full max-w-sm sm:max-w-md md:max-w-lg p-4 sm:p-6 rounded-lg shadow-lg relative">
     <button (click)="closeModal()" class="absolute top-2 right-2 text-gray-500 hover:text-gray-800">
       &times;
     </button>
-    <h2 class="text-xl font-bold mb-4 text-[#F04E29]">
-    Name:  {{ selectedProject?.name }}
+    <h2 class="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-[#F04E29]">
+      Name: {{ selectedProject?.name }}
     </h2>
-  
-    
-    <p class="mb-4 text-gray-700">
+    <p class="mb-3 sm:mb-4 text-gray-700">
       {{ selectedProject?.subtitle }}
     </p>
-    <p class="mb-4 text-gray-700">
+    <p class="mb-3 sm:mb-4 text-gray-700">
       {{ selectedProject?.Description }}
     </p>
-    <div class="mb-4">
+    <div class="mb-3 sm:mb-4">
       <p class="text-sm font-semibold mb-2">Links:</p>
       <a [href]="selectedProject?.liveLink" target="_blank" class="text-blue-600 hover:underline"
         *ngIf="selectedProject?.liveLink">
@@ -71,9 +70,11 @@
         GitLink
       </a>
     </div>
-    <textarea class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring focus:ring-[#F04E29]"
+    <textarea 
+      class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring focus:ring-[#F04E29]"
       rows="5" readonly *ngIf="selectedProject?.features">{{ selectedProject?.features }}</textarea>
-    <button (click)="closeModal()" class="mt-4 px-4 py-2 bg-[#F04E29] text-white rounded-md hover:bg-[#e44b27]">
+    <button (click)="closeModal()" 
+      class="mt-4 px-4 py-2 bg-[#F04E29] text-white rounded-md hover:bg-[#e44b27]">
       Close
     </button>
   </div>
