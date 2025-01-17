@@ -8,7 +8,7 @@ import { environment } from '../../../environments/environment';
 @Component({
   selector: 'app-contacts',
   standalone: true,
-  imports: [HeaderComponent, FormsModule,ReactiveFormsModule,CommonModule] ,
+  imports: [ FormsModule,ReactiveFormsModule,CommonModule] ,
   templateUrl: './contacts.component.html',
   styleUrl: './contacts.component.css'
 })

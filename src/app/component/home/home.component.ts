@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { HeaderComponent } from '../header/header.component';
 import { RouterModule } from '@angular/router';
+import { FooterComponent } from '../footer/footer.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [HeaderComponent ,RouterModule],
+  imports: [ RouterModule , FooterComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
@@ -14,6 +15,7 @@ export class HomeComponent {
   cvUrl: string = 'https://drive.google.com/file/d/12jaLoKpCOeHooOl-cIjKE_SgpiotPWm1/view?usp=sharing';
   phoneNumber: string = '';
 
+  gmail:string="nspious1999@gmail.com"
   title = 'N S Pious';
 
   hi: string = "Hi , I am "

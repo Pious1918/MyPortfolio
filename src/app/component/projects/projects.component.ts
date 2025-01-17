@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [HeaderComponent , FormsModule , CommonModule],
+  imports: [  FormsModule , CommonModule],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.css'
 })

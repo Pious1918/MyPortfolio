@@ -10,7 +10,7 @@ interface Skill {
 @Component({
   selector: 'app-skills',
   standalone: true,
-  imports: [HeaderComponent , CommonModule],
+  imports: [ CommonModule],
   templateUrl: './skills.component.html',
   styleUrl: './skills.component.css'
 })
