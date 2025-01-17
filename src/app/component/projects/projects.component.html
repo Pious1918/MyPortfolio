@@ -1,0 +1,81 @@
+<app-header></app-header>
+<div class="container mx-auto px-4 py-8">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 justify-items-center">
+    <!-- Card Component -->
+    <div *ngFor="let card of paginatedCards"
+      class="group hover:saturate-100 saturate-0 transition-[filter] relative w-full max-w-[248px] h-[318px] bg-[#FAEDE4] font-['Robot_Flex'] border-b-2 border-b-[#F04E29] rounded-lg shadow-lg cursor-pointer"
+      (click)="openModal(card)">
+      <img [src]="card.image" [alt]="card.title"
+        class="group-hover:rounded-br-[100px] rounded-br-[0px] transition-[border-radius]" />
+      <p class="m-[5px] text-[#262626] text-base">{{ card.title }}</p>
+      <p class="m-[5px] text-[#777674] text-xs">{{ card.subtitle }}</p>
+    </div>
+
+  </div>
+
+  <!-- Pagination -->
+  <div class="flex justify-center mt-8">
+    <button (click)="changePage(currentPage - 1)" [disabled]="currentPage === 1"
+      class="px-4 py-2 bg-[#F04E29] text-white rounded-l-md hover:bg-[#e44b27] disabled:opacity-50">
+      Previous
+    </button>
+    <button *ngFor="let page of [].constructor(totalPages()); let i = index" (click)="changePage(i + 1)" [ngClass]="{
+        'bg-white text-[#F04E29] border border-[#F04E29]': currentPage === i + 1,
+        'bg-[#F04E29] text-white': currentPage !== i + 1
+      }" class="px-4 py-2">
+      {{ i + 1 }}
+    </button>
+    <button (click)="changePage(currentPage + 1)" [disabled]="currentPage === totalPages()"
+      class="px-4 py-2 bg-[#F04E29] text-white rounded-r-md hover:bg-[#e44b27] disabled:opacity-50">
+      Next
+    </button>
+  </div>
+</div>
+
+
+<!-- Modal HTML -->
+<div *ngIf="selectedProject" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+  <div class="bg-white w-full max-w-lg p-6 rounded-lg shadow-lg relative">
+    <button (click)="closeModal()" class="absolute top-2 right-2 text-gray-500 hover:text-gray-800">
+      &times;
+    </button>
+    <h2 class="text-xl font-bold mb-4 text-[#F04E29]">
+    Name:  {{ selectedProject?.name }}
+    </h2>
+  
+    
+    <p class="mb-4 text-gray-700">
+      {{ selectedProject?.subtitle }}
+    </p>
+    <p class="mb-4 text-gray-700">
+      {{ selectedProject?.Description }}
+    </p>
+    <div class="mb-4">
+      <p class="text-sm font-semibold mb-2">Links:</p>
+      <a [href]="selectedProject?.liveLink" target="_blank" class="text-blue-600 hover:underline"
+        *ngIf="selectedProject?.liveLink">
+        Live Link
+      </a>
+      <br *ngIf="selectedProject?.liveLink && selectedProject?.frontendLink" />
+      <a [href]="selectedProject?.frontendLink" target="_blank" class="text-blue-600 hover:underline"
+        *ngIf="selectedProject?.frontendLink">
+        Frontend Code
+      </a>
+      <br *ngIf="selectedProject?.frontendLink && selectedProject?.backendLink" />
+      <a [href]="selectedProject?.backendLink" target="_blank" class="text-blue-600 hover:underline"
+        *ngIf="selectedProject?.backendLink">
+        Backend Code
+      </a>
+      <br *ngIf="selectedProject?.gitlink" />
+      <a [href]="selectedProject?.gitlink" target="_blank" class="text-blue-600 hover:underline"
+        *ngIf="selectedProject?.gitlink">
+        GitLink
+      </a>
+    </div>
+    <textarea class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring focus:ring-[#F04E29]"
+      rows="5" readonly *ngIf="selectedProject?.features">{{ selectedProject?.features }}</textarea>
+    <button (click)="closeModal()" class="mt-4 px-4 py-2 bg-[#F04E29] text-white rounded-md hover:bg-[#e44b27]">
+      Close
+    </button>
+  </div>
+</div>
