@@ -54,6 +54,12 @@
         *ngIf="selectedProject?.liveLink">
         Live Link
       </a>
+      <br>
+
+      <a [href]="selectedProject?.demo" target="_blank" class="text-blue-600 hover:underline"
+        *ngIf="selectedProject?.demo">
+        Project Demo
+      </a>
       <br *ngIf="selectedProject?.liveLink && selectedProject?.frontendLink" />
       <a [href]="selectedProject?.frontendLink" target="_blank" class="text-blue-600 hover:underline"
         *ngIf="selectedProject?.frontendLink">

@@ -21,6 +21,7 @@ export class ProjectsComponent {
       subtitle: 'Microservices | Angular | express js | Mongodb | grpc | Rabbitmq | Webrtc | Socket.io | ffmpeg',
       name:"Streamio",
       liveLink:"https://streamio-frontend-kzuy.vercel.app/login",
+      demo:"https://youtu.be/GkWkAd06he0",
       frontendLink:"https://github.com/Pious1918/StreamioFrontend",
       backendLink:"https://github.com/Pious1918/StreamioBackend",
       Description:"Streamio is a feature-rich streaming platform built using the MEAN Stack with a microservices architecture. It offers adaptive video streaming via AWS S3 and CloudFront, live streaming with real-time chat powered by WebRTC and Socket.IO, and secure user interactions with JWT-based authentication. With state management using NgRx, robust TypeScript implementation, and a sleek UI styled with Tailwind CSS, Streamio provides a seamless and engaging user experience for streaming and communication."
@@ -30,6 +31,7 @@ export class ProjectsComponent {
       title: 'Ecommerce Application',
       subtitle: 'Ejs | express js | Mongodb | chart js | ',
       name:"Funky",
+      demo:"https://youtu.be/AqFpPxCRoIo",
       gitlink:"https://github.com/Pious1918/Funky.com",
       Description:"Developed a comprehensive e-commerce platform with features such as product, category, user, order, offer, coupon, wallet, and wishlist management. Built using Node.js and Express.js in an MVC architecture with an EJS-based frontend, the platform ensures secure authentication with JWT, seamless payments via Razorpay, and OTP verification through Nodemailer. Hosted on AWS EC2 with DNS management using Amazon Route 53, it offers a reliable, scalable, and user-friendly shopping experience."
     },
@@ -39,6 +41,7 @@ export class ProjectsComponent {
       subtitle: 'Angular | express js | Mongodb | Socket.io',
       name:"JotIt",
       liveLink:"https://jotit-frontend.vercel.app/login",
+      demo:"https://youtu.be/MsrUZN4d4aE",
       frontendLink:"https://github.com/Pious1918/JotitFrontend",
       backendLink:"https://github.com/Pious1918/JotItBackend",
       Description:"Developed a content management system (CMS) using the MEAN Stack, offering features like drafting, publishing, editing, and deleting articles. The drafting process was enhanced with real-time collaboration powered by Socket.IO, enabling seamless and efficient content creation. This CMS is designed to provide a user-friendly experience with robust functionality for managing articles efficiently."
